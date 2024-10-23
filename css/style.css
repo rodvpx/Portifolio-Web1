@@ -1,0 +1,238 @@
+html {
+  font-family: Helvetica, sans-serif;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #528b8b;
+  box-sizing: border-box;
+}
+
+nav {
+  background-color: gold;
+  border: 3px transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Faz a barra ocupar toda a largura da tela */
+  padding: 1rem 1rem;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style-type: none; /* Remove os marcadores da lista */
+  display: flex; /* Exibe os itens da lista horizontalmente */
+  justify-content: center; /* Centraliza os links de navegação horizontalmente no centro do contêiner flexível (só funciona pois os elementos estão flexíveis pelo display flex) */
+  gap: 1rem; /* Espaçamento entre os itens da barra de navegação | PARA RESPONSIVO TEM QUE FAZER DE OUTRA FORMA.*/
+  padding: 0; /* Remove o espaçamento padrão da lista */
+  margin: 0; /* Remove margem externa da lista */
+  align-items: center; /* Centraliza os itens verticalmente dentro do contêiner flexível. */
+}
+
+.nav-links li a {
+  background-color: #0099ff;
+  color: #fff; /* Cor do texto dos links */
+  text-decoration: none; /* Remove sublinhado dos links */
+  font-size: 1.1rem; /* Tamanho do texto dos links, define como pouca coisa maior do que o tamanho do texto da fonte do documento */
+  padding: 0.5rem 1rem; /* Aplica um espaçamento interno de 0.5rem nas partes superior e inferior, e 1rem nas laterais dos links (aumenta a área clicável e melhora a legibilidade dos links)*/
+  border-radius: 5px; /* Bordas arredondadas nos links */
+  transition: background-color 0.3s ease; /* Define uma transição suave da cor de fundo ao passar o mouse sobre os links - a transição dura 0.3s (300ms) e usa o efeito de transição ease, que começa devagar, acelera no meio e desacelera no final.  */
+}
+
+/* Efeito ao passar o mouse nos links */
+.nav-links li a:hover {
+  background-color: #007bff; /* Muda a cor de fundo ao passar o mouse */
+  color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+/* Efeito ao clicar no link */
+.nav-links li a:active {
+  background-color: #0056b3; /* Cor mais escura ao clicar */
+}
+
+#about-container {
+  display: flex;
+  flex-direction: column; /* Organiza os elementos em coluna */
+  border: 5px solid gold;
+  border-radius: 20px;
+  padding: 5px;
+  margin-top: 10%;
+  background-color: #0099ff8c;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Espaço entre o header e o parágrafo */
+}
+
+#title-about {
+  border: 3px solid;
+  border-radius: 10px;
+  border-color: gold;
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+  margin: 5px 5px 0px -25px;
+  background-color: rgba(0, 0, 0, 0.304);
+}
+
+#text-about {
+  border: 3px solid gold;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: justify;
+  margin-top: -3%;
+  margin-bottom: auto;
+  background-color: rgba(0, 0, 0, 0.304);
+}
+
+#ft_perfil {
+  width: 100px;
+  height: auto;
+  border: 3px solid gold;
+  border-radius: 50%;
+  margin-left: -35px;
+}
+
+#nome_projetos {
+  padding: 10px 20px; /* Ajuste para espaço interno */
+  border: 5px solid gold;
+  font-size: 25px;
+  background-color: rgba(0, 0, 0, 0.304);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.div_topicos {
+  background-color: #0099ff8c;
+  border: 5px solid gold;
+  border-radius: 15px;
+  padding: 10px; /* Espaço interno da lista */
+  margin-top: 15px;
+}
+
+details {
+  cursor: pointer; /* Mostra que é clicável */
+}
+
+details summary {
+  display: flex; /* Usa flexbox para alinhar os itens */
+  justify-content: space-between; /* Espaço entre o título e o botão "Ver mais" */
+  align-items: center; /* Alinha verticalmente */
+  margin: 0; /* Remove margem do summary */
+}
+
+.h3_top {
+  margin: 0; /* Remove margem do h3 para evitar espaçamentos indesejados */
+  width: 60%;
+  border-bottom: 5px solid cyan;
+  margin-left: 5px;
+}
+
+.ver_mais {
+  font-size: 16px; /* Tamanho do texto do botão */
+  color: cyan; /* Cor do botão */
+  border: 3px solid cyan;
+  border-radius: 10px;
+  padding: 2px 10px;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.ver_mais:hover {
+  background-color: rgba(0, 0, 0, 0.304); /* Cor de fundo ao passar o mouse */
+  color: cyan;
+  font-weight: bold;
+}
+
+details[open] .ver_mais {
+  display: none; /* Oculta o texto "Ver mais" quando aberto */
+}
+
+details[open] summary::after {
+  content: "∧ | Ver menos"; /* Adiciona texto "Ver menos" ao abrir */
+  color: cyan;
+  border: 3px solid cyan;
+  background-color: rgba(0, 0, 0, 0.304);
+  border-radius: 10px;
+  padding: 2px 10px;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover para "Ver menos" */
+details[open] summary:hover::after {
+  background-color: #0099ff8c; /* Cor de fundo ao passar o mouse */
+  color: cyan; /* Muda a cor do texto ao passar o mouse */
+}
+
+.marcador-lista {
+  list-style-type: none; /* Remove marcadores padrão */
+  padding: 0; /* Remove o preenchimento padrão */
+  margin: 0; /* Remove a margem padrão */
+}
+
+.marcador-lista li {
+  position: relative; /* Para posicionar a seta */
+  padding-left: 20px; /* Espaçamento à esquerda para a seta */
+}
+
+.marcador-lista li::before {
+  content: "»"; /* Adiciona uma seta (pode usar outros símbolos ou caracteres) */
+  position: absolute; /* Posiciona a seta em relação ao li */
+  left: 0; /* Posiciona à esquerda */
+  top: -2.5px; /* Alinha ao topo do item */
+  font-size: 25px;
+}
+
+.git-container {
+  text-align: center;
+}
+
+.link_projetos {
+  color: black; /* Cor do texto */
+  display: inline-flex; /* Garante que o link use flexbox */
+  align-items: center; /* Centraliza verticalmente os itens */
+  justify-content: center; /* Centraliza horizontalmente os itens */
+  margin-top: 2px; /* Espaço acima do link */
+  border: 2px solid transparent; /* Defina a largura e a cor da borda */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 5px 10px; /* Espaçamento interno */
+  background-color: rgba(255, 255, 255, 0.304); /* Fundo semi-transparente */
+  text-decoration: none; /* Remove o sublinhado do link */
+  transition: background-color 0.3s; /* Transição suave para efeitos de hover */
+}
+
+/* Efeito de hover */
+.link_projetos:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Alterar a cor de fundo ao passar o mouse */
+}
+
+#icon-github {
+  width: 25px; /* Largura do ícone */
+  height: auto; /* Altura automática para manter a proporção */
+  margin-right: 8px; /* Espaçamento entre o ícone e o texto */
+}
+
+.div_img_center {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.p_style {
+  margin: 8px -3px -4px -23px;
+  display: inline-block;
+  padding: 20px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
